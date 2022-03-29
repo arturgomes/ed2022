@@ -1,7 +1,7 @@
 import perfy from 'perfy';
 
 //algoritmos de ordenação vão aqui
-import bubbleSort from './algorithms/bubbleSort.js'
+// import bubbleSort from './algorithms/bubbleSort.js'
 import quickSort from './algorithms/quickSort.js';
 
 // conjunto de dados aleatorios
@@ -21,6 +21,7 @@ import vet_3000 from './sets/random/random_3000.js'
 import vet_30000 from './sets/random/random_30000.js'
 import vet_300000 from './sets/random/random_300000.js'
 // conjunto de dados ordenados decrescentes
+
 import invert_10 from './sets/invert/invert_10.js'
 import invert_100 from './sets/invert/invert_100.js'
 import invert_1000 from './sets/invert/invert_1000.js'
@@ -80,7 +81,23 @@ const testes_sorted = [sorted_10, sorted_100, sorted_1000, sorted_10000, sorted_
 // })
 
 // teste decrescente
-testes_invert.forEach(t => {
+// testes_invert.forEach(t => {
+//   //seta o contador para começar a marcar o tempo
+//   perfy.start('label-start');
+//   //editar essa linha
+//   // executa o algoritmo escolhido
+//   let result = quickSort(t);
+//   //termina a contagem de tempo
+//   let end = perfy.end('label-start').time;
+
+//   //e alterar o nome do algoritmo de ordenação
+//   //exibe o tempo de execução do algoritmo
+//   console.log("Tempo de execução do quickSort com ",result.length, "elementos decrescentes:", end, "s")
+
+// })
+
+// teste ordenado
+testes_sorted.forEach(t => {
   //seta o contador para começar a marcar o tempo
   perfy.start('label-start');
   //editar essa linha
@@ -91,22 +108,6 @@ testes_invert.forEach(t => {
 
   //e alterar o nome do algoritmo de ordenação
   //exibe o tempo de execução do algoritmo
-  console.log("Tempo de execução do quickSort com ",result.length, "elementos decrescentes:", end, "s")
+  console.log("Tempo de execução do bubbleSort com ",result.length, "elementos ordenados:", end, "s")
 
 })
-
-// // teste ordenado
-// testes_sorted.forEach(t => {
-//   //seta o contador para começar a marcar o tempo
-//   perfy.start('label-start');
-//   //editar essa linha
-//   // executa o algoritmo escolhido
-//   let result = bubbleSort(t);
-//   //termina a contagem de tempo
-//   let end = perfy.end('label-start').time;
-
-//   //e alterar o nome do algoritmo de ordenação
-//   //exibe o tempo de execução do algoritmo
-//   console.log("Tempo de execução do bubbleSort com ",result.length, "elementos ordenados:", end, "s")
-
-// })
