@@ -25,3 +25,5 @@ function mergeSort(vetor) {
   return merge(mergeSort(esquerdo), mergeSort(vetor))
 }
 console.log(mergeSort([5, 4, 3, 2, 1]))
+
+export default mergeSort;
