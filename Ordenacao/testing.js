@@ -1,8 +1,8 @@
 import perfy from 'perfy';
 
 //algoritmos de ordenação vão aqui
-// import bubbleSort from './algorithms/bubbleSort.js'
-import quickSort from './algorithms/quickSort.js';
+// import bubbleSort from './algoritmos/bubbleSort.js'
+import quickSort from './algoritmos/quickSort.js';
 
 // conjunto de dados aleatorios
 import vet_10 from './sets/random/random_10.js'
@@ -61,7 +61,9 @@ const testes_random = [vet_10, vet_100, vet_1000, vet_10000, vet_100000,vet_20, 
 //conjunto de testes ordenados decrescentes
 const testes_invert = [invert_10, invert_100, invert_1000, invert_10000, invert_100000,invert_20, invert_200, invert_2000, invert_20000, invert_200000,invert_30, invert_300, invert_3000, invert_30000, invert_300000]
 //conjunto de testes ordenados crescentemente
-const testes_sorted = [sorted_10, sorted_100, sorted_1000, sorted_10000, sorted_100000,sorted_20, sorted_200, sorted_2000, sorted_20000, sorted_200000,sorted_30, sorted_300, sorted_3000, sorted_30000, sorted_300000]
+const testes_sorted = [sorted_10, sorted_100, sorted_1000, 
+  // sorted_10000, sorted_100000,sorted_20, sorted_200, sorted_2000, sorted_20000, sorted_200000,sorted_30, sorted_300, sorted_3000, sorted_30000, sorted_300000
+]
     
 
 // //teste aleatorio
