@@ -5,6 +5,7 @@ import bubbleSort from './algoritmos/bubbleSort.js'
 import quickSort from './algoritmos/quickSort.js';
 import mergeSort from './algoritmos/merge.js';
 
+
 // conjunto de dados aleatorios
 import vet_10 from './sets/random/random_10.js'
 import vet_100 from './sets/random/random_100.js'
