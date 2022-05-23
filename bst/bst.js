@@ -57,29 +57,41 @@ class BST{
     }
 
   }
-
-}
-
-// let no = new Noh(4);
-// no.direita = new Noh(5);
-// no.esquerda = new Noh(3);
-
-// let arvore = new BST();
-// arvore.raiz = no;
-
-// console.log(no)
 /**
- *     ____________________
- *               |
- *               4
- *             /   \
- *            3     5
- *           / \   / \
- *    
- * 
- * Noh {
-  val: 4,
-  esquerda: Noh { val: 3, esquerda: null, direita: null },
-  direita: Noh { val: 5, esquerda: null, direita: null }
-}
+ * Imprimir 
+ * preOrdem = valor (rec esquerda) (rec direita)
+ * emOrdem = (rec esquerda) valor (rec direita)
+ * posOrdem = (rec esquerda) (rec direita) valor
  */
+
+  emOrdem(noh = this.raiz){
+    if(!noh){
+      return ' [] '
+    }
+    let res = '(';
+    res += this.emOrdem(noh.esquerda);
+    res += ' ' + noh.val + ' ';
+    res += this.emOrdem(noh.direita);
+    res += ')';
+    return res;
+  }
+
+}
+
+let arvore = new BST()
+arvore.inserir(4)
+console.log(arvore)
+/**
+ * ________________
+ *        |
+ *       (4)
+ *      /   \
+ *     []   [] 
+ * 
+ */
+arvore.inserir(2);
+arvore.inserir(1);
+arvore.inserir(10);
+
+// console.log(JSON.stringify(arvore))
+console.log(arvore.emOrdem())
