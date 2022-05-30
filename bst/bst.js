@@ -129,6 +129,41 @@ class BST{
     return this.minimo(noh.direita)
   }
 
+  remove(val, noh = this.raiz){
+    console.log("noh atual: ",noh.val)
+    if(noh){
+      if(noh.val === val){
+        console.log("noh ", noh.val, "é o buscado" )
+        if(noh.esquerda === null && noh.direita === null){
+          console.log("noh ", noh.val, "é folha" )
+          noh = null
+          return;
+        }
+        else if(noh.esquerda === null && noh.direita !== null){
+          console.log("noh ", noh.val, "tem filho à direita" )
+          noh = noh.direita
+          return;
+        }
+        else if(noh.esquerda !== null && noh.direita === null){
+          console.log("noh ", noh.val, "tem filho à esquerda" )
+          noh = noh.esquerda
+          return;
+        }else{
+          console.log("noh ", noh.val, "tem dois filhos" )
+          noh.val = this.sucessor(noh)
+          this.remove(this.sucessor(noh))
+          return;
+        }
+
+      }
+      if(val < noh.val){
+        this.remove(val, noh.esquerda)
+      }else{
+        this.remove(val, noh.direita)
+      }
+    }
+  }
+
 }
 
 let arvore = new BST()
@@ -140,29 +175,29 @@ let arvore = new BST()
  *     []   [] 
  * 
  */
-arvore.inserir(43);
-arvore.inserir(24);
-arvore.inserir(48);
-arvore.inserir(15);
-arvore.inserir(36);
-arvore.inserir(44);
-arvore.inserir(50);
-arvore.inserir(14);
-arvore.inserir(21);
-arvore.inserir(35);
-arvore.inserir(40);
-arvore.inserir(45);
-arvore.inserir(32);
-arvore.inserir(37);
+// arvore.inserir(43);
+// arvore.inserir(24);
+// arvore.inserir(48);
+// arvore.inserir(15);
+// arvore.inserir(36);
+// arvore.inserir(44);
+// arvore.inserir(50);
+// arvore.inserir(14);
+// arvore.inserir(21);
+// arvore.inserir(35);
+// arvore.inserir(40);
+// arvore.inserir(45);
+// arvore.inserir(32);
+// arvore.inserir(37);
 
-// console.log();
-console.log(arvore.sucessor(arvore.buscar(24))===32); //32
-console.log(arvore.sucessor(arvore.buscar(36))===37); //32
-console.log(arvore.sucessor(arvore.buscar(43))===44); //32
-dirVinteQuatro = arvore.buscar(24).direita
-esqQuarentaTres = arvore.buscar(43).esquerda
-console.log("O máximo da direita de 24 é: ",arvore.maximo(dirVinteQuatro));
-console.log("O máximo da esquerda de 43 é: ",arvore.maximo(esqQuarentaTres));
+// // console.log();
+// console.log(arvore.sucessor(arvore.buscar(24))===32); //32
+// console.log(arvore.sucessor(arvore.buscar(36))===37); //32
+// console.log(arvore.sucessor(arvore.buscar(43))===44); //32
+// dirVinteQuatro = arvore.buscar(24).direita
+// esqQuarentaTres = arvore.buscar(43).esquerda
+// console.log("O máximo da direita de 24 é: ",arvore.maximo(dirVinteQuatro));
+// console.log("O máximo da esquerda de 43 é: ",arvore.maximo(esqQuarentaTres));
 
 
 
@@ -171,26 +206,10 @@ console.log("O máximo da esquerda de 43 é: ",arvore.maximo(esqQuarentaTres));
 // console.log(arvore.emOrdem())
 // console.log(arvore.posOrdem())
 
-// ( 43 
-//   ( 24 
-//     ( 15 
-//       ( 14  *  * )
-//       ( 21  *  * ))
-//     ( 36 
-//       ( 35 
-//         ( 32  *  * ) 
-//         * )
-//       ( 40 
-//         ( 37  
-//           *  
-//           * ) 
-//         * )))
-//   ( 48 
-//     ( 44  
-//       * 
-//       ( 45  
-//         *  
-//         * ))
-//     ( 50 
-//       *  
-//       * )))
+arvore.inserir(10)
+arvore.inserir(5)
+arvore.inserir(15)
+console.log(arvore.preOrdem())
+arvore.remove(5);
+console.log(arvore.preOrdem())
+
